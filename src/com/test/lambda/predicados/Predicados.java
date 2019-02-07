@@ -13,16 +13,19 @@ public class Predicados {
 		List<Integer> lista = Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
 		
 		System.out.println(" -- Numeros Pares -- ");
-		evaluar(lista, x -> x%2 == 0 );
+		evaluarEnteros(lista, x -> x%2 == 0 );
 		
 		System.out.println(" -- Numeros Impares -- ");
-		evaluar(lista, l -> l%2 == 1);
+		evaluarEnteros(lista, l -> l%2 == 1);
 		
 		System.out.println(" -- Numeros Mayores a 5 -- ");
-		evaluar(lista, k -> k > 5);
+		evaluarEnteros(lista, k -> k > 5);
+		
+		System.out.println(" -- Evaluar Cadenas -- ");
+		evaluarCadenas();
 	}
 	
-	public static void evaluar(List<Integer> lista, Predicate<Integer> predicado){
+	public static void evaluarEnteros(List<Integer> lista, Predicate<Integer> predicado){
 		
 		for(Integer n : lista){
 			if(predicado.test(n)){
@@ -37,6 +40,17 @@ public class Predicados {
 			.stream()
 			.filter(n -> predicado.test(n))
 			.forEach(n -> System.out.println(n));
+	}
+	
+	public static void evaluarCadenas(){
+		
+      Predicate<String> predicate = (s) -> s.length() > 0;
+      
+      //evalua si la cadena "predicado" es mayor a 0
+      System.out.println(predicate.test("predicado")); // true
+      //niega la valor de la evaulación
+      System.out.println(predicate.negate().test("predicado")); // false
+      
 	}
 	
 }
