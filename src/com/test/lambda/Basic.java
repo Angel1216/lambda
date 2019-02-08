@@ -10,9 +10,9 @@ public class Basic {
 	
 	public static void main(String[] args){
 	
-//		new Basic().iteracionesBasicas();
+		new Basic().iteracionesBasicas();
 //		new Basic().iteracionesFilterCollect();
-		new Basic().iteracionesFiltros();
+//		new Basic().iteracionesFiltros();
         
 	}
 	
