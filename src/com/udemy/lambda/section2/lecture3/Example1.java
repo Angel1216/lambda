@@ -23,7 +23,7 @@ public class Example1 {
 		
 		// Declaritive style of programming - what style of programming
 		
-		int sum1 = IntStream.rangeClosed(0, 100).parallel().sum();
+		int sum1 = IntStream.rangeClosed(0, 100).sum();
 		
 		System.out.println("Sum using Declarative Approach: " + sum1);
 			
