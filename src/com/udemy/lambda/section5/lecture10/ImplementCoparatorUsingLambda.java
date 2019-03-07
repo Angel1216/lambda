@@ -24,8 +24,10 @@ public class ImplementCoparatorUsingLambda {
 		 * java 8 lambda
 		 */
 		Comparator<Integer> comparatorLambda = (Integer a, Integer b) -> a.compareTo(b);
-		
 		System.out.println(comparatorLambda.compare(19, 17));
+		
+		Comparator<Integer> comparatorLambda1 = (a, b) -> a.compareTo(b);
+		System.out.println("comparatorLambda1: " + comparatorLambda1.compare(17, 17));
 	}
 
 }
