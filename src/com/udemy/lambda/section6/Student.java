@@ -6,14 +6,14 @@ import java.util.List;
 public class Student {
 	
 	private String name;
-	private int gradeLevel;
+	private Integer gradeLevel;
 	private double gpa;
 	private String gender;
 	private List<String> activities = new ArrayList<String>();
 
 	
 	
-	public Student(String name, int gradeLevel, double gpa, String gender, List<String> activities) {
+	public Student(String name, Integer gradeLevel, double gpa, String gender, List<String> activities) {
 		super();
 		this.name = name;
 		this.gradeLevel = gradeLevel;
@@ -27,7 +27,7 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getGradeLevel() {
+	public Integer getGradeLevel() {
 		return gradeLevel;
 	}
 	public void setGradeLevel(int gradeLevel) {
@@ -45,8 +45,13 @@ public class Student {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-
-
+	
+	public List<String> getActivities() {
+		return activities;
+	}
+	public void setActivities(List<String> activities) {
+		this.activities = activities;
+	}
 	@Override
 	public String toString() {
 		return "Student{" +
