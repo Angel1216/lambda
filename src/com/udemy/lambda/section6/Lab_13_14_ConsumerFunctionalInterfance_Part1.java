@@ -3,7 +3,7 @@ package com.udemy.lambda.section6;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class ConsumerFunctionalInterfance_Part1 {
+public class Lab_13_14_ConsumerFunctionalInterfance_Part1 {
 
 	// Fuente de Datos
 	static List<Student> listStudents = StudentDataBase.getAllStudents();
@@ -12,8 +12,8 @@ public class ConsumerFunctionalInterfance_Part1 {
 	static Consumer<Student> cs = a -> System.out.println(a);
 	static Consumer<Student> student = s -> System.out.println(s.getName());
 	static Consumer<Student> grade = g -> System.out.println(g.getGradeLevel());
-	static Consumer<Student> activities = a -> System.out.println(a.getActivities());
-	static Consumer<Student> informationStudent = std -> {System.out.println(std.getName().concat(" - ").concat(String.valueOf(std.getGradeLevel()).concat(" - ").concat(std.getGender())));};
+	static Consumer<Student> activities = a -> System.out.println("  Actividades: " + a.getActivities());
+	static Consumer<Student> informationStudent = std -> {System.out.print(std.getName().concat(" - ").concat(String.valueOf(std.getGradeLevel()).concat(" - ").concat(std.getGender())));};
 	
 	public static void printAllStudents() {
 		
@@ -33,11 +33,10 @@ public class ConsumerFunctionalInterfance_Part1 {
 	
 	public static void printNameAndActivitiesAndGradeUsingCondition() {
 		System.out.println("-------- printNameAndActivitiesAndGradeUsingCondition --------");
-		
 		listStudents
 			.stream()
 			.filter(std -> std.getGradeLevel().equals(3))
-			.forEach(informationStudent);
+			.forEach(informationStudent.andThen(activities));
 	}
 	
 	public static void main(String[] args) {
